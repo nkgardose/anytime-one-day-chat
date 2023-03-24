@@ -6,7 +6,8 @@ export interface AuthState {
 }
 
 export enum AuthAction {
-  LOGIN
+  LOGIN,
+  ADD_USER
 }
 
 interface SetUsernameAction {
@@ -23,12 +24,18 @@ export type IAuthReducer = (
 
 const AuthReducer: IAuthReducer = (store, action) => {
   switch (action.type) {
-    case AuthAction.LOGIN:
+    case AuthAction.LOGIN: {
       void localforage.setItem('user', action.activeUser)
+      const users =
+        store.users.find((user) => user === action.activeUser) !== undefined
+          ? store.users
+          : [...store.users, action.activeUser]
       return {
         ...store,
-        activeUser: action.activeUser
+        activeUser: action.activeUser,
+        users
       }
+    }
     default:
       return { ...store }
   }

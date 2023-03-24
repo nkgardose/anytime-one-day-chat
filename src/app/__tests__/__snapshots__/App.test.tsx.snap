@@ -2,8 +2,28 @@
 
 exports[`App renders properly 1`] = `
 <div>
-  <div>
-    App
+  <div
+    class="css-ft26jp-App"
+  >
+    <div
+      class="css-jdqh86-Channel"
+    >
+      <nav
+        class="css-17wuva9-Header"
+      >
+        Joyse
+      </nav>
+    </div>
+    <div
+      class="css-1d4whn6-Chat"
+    >
+      <nav
+        class="css-17wuva9-Header"
+      >
+        test
+         Channel
+      </nav>
+    </div>
   </div>
 </div>
 `;
