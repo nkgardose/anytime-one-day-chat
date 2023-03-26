@@ -6,8 +6,8 @@ export interface AuthState {
 }
 
 export enum AuthAction {
-  LOGIN,
-  ADD_USER
+  LOGIN = 'LOGIN',
+  ADD_USER = 'ADD_USER'
 }
 
 interface SetUsernameAction {
@@ -17,10 +17,7 @@ interface SetUsernameAction {
 
 export type AuthActionTypes = SetUsernameAction
 
-export type IAuthReducer = (
-  store: AuthState,
-  action: AuthActionTypes
-) => AuthState
+export type IAuthReducer = (store: AuthState, action: AuthActionTypes) => AuthState
 
 const AuthReducer: IAuthReducer = (store, action) => {
   switch (action.type) {
