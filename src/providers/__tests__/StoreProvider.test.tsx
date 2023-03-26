@@ -60,9 +60,7 @@ describe('<StoreProvider>', () => {
     expect(el.length).toBe(2)
 
     listItems.forEach((item) => {
-      expect(activeUsers.find((user) => item.innerHTML === user)).toBe(
-        item.innerHTML
-      )
+      expect(activeUsers.find((user) => item.innerHTML === user)).toBe(item.innerHTML)
     })
   })
 })
