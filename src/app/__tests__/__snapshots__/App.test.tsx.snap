@@ -3,26 +3,87 @@
 exports[`App renders properly 1`] = `
 <div>
   <div
-    class="css-ft26jp-App"
+    class="css-1xj4huh-Layout"
   >
     <div
-      class="css-jdqh86-Channel"
+      class="css-1e86s6t-Channel"
     >
       <nav
         class="css-17wuva9-Header"
       >
-        Joyse
+        <div
+          class="css-1ysghxv-Users"
+        >
+          <select
+            class="css-13amir5-Users"
+          >
+            <option>
+              Joyse
+            </option>
+            <option>
+              Sam
+            </option>
+            <option>
+              Russell
+            </option>
+          </select>
+          <i
+            aria-label="Dropdown"
+            class="css-1mpnkv5-Users"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 24H0V0h24v24z"
+                fill="none"
+                opacity=".87"
+              />
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+              />
+            </svg>
+          </i>
+        </div>
       </nav>
+      <ul
+        class="css-1ti0mfk-ChannelList"
+      >
+        <li
+          aria-hidden="true"
+          class="css-1oyhoxx-ChannelItem"
+        >
+          General
+           Channel
+        </li>
+        <li
+          aria-hidden="true"
+          class="css-1oyhoxx-ChannelItem"
+        >
+          Technology
+           Channel
+        </li>
+        <li
+          aria-hidden="true"
+          class="css-1oyhoxx-ChannelItem"
+        >
+          LGTM
+           Channel
+        </li>
+      </ul>
     </div>
     <div
-      class="css-1d4whn6-Chat"
+      class="css-1cohcow-Layout"
     >
-      <nav
-        class="css-17wuva9-Header"
-      >
-        test
-         Channel
-      </nav>
+      <div>
+        wala
+      </div>
     </div>
   </div>
 </div>
