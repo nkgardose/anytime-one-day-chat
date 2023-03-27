@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Channel renders properly 1`] = `
+<div>
+  <div
+    class="css-1e86s6t-Channel"
+  >
+    <nav
+      class="css-17wuva9-Header"
+    >
+      <div
+        class="css-1ysghxv-Users"
+      >
+        <select
+          class="css-13amir5-Users"
+        >
+          <option>
+            Joyse
+          </option>
+          <option>
+            Sam
+          </option>
+          <option>
+            Russell
+          </option>
+        </select>
+        <i
+          aria-label="Dropdown"
+          class="css-1mpnkv5-Users"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 24H0V0h24v24z"
+              fill="none"
+              opacity=".87"
+            />
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+            />
+          </svg>
+        </i>
+      </div>
+    </nav>
+    <ul
+      class="css-1ti0mfk-ChannelList"
+    >
+      <li
+        class="css-1vhqlnv-ChannelItem"
+      >
+        <a
+          href="/chat/General"
+        >
+          General
+           Channel
+        </a>
+      </li>
+      <li
+        class="css-1vhqlnv-ChannelItem"
+      >
+        <a
+          href="/chat/Technology"
+        >
+          Technology
+           Channel
+        </a>
+      </li>
+      <li
+        class="css-1vhqlnv-ChannelItem"
+      >
+        <a
+          href="/chat/LGTM"
+        >
+          LGTM
+           Channel
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

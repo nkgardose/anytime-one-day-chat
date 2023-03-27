@@ -1,14 +1,19 @@
+import { Global } from '@emotion/react'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import App from './app'
+import Providers from './providers'
 import reportWebVitals from './reportWebVitals'
+import global from './style/global'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Global styles={global} />
+    <Providers>
+      <App />
+    </Providers>
   </React.StrictMode>
 )
 
