@@ -109,6 +109,8 @@ export const messageContent = css`
   & span {
     color: #999;
     font-size: 12px;
+    display: inline-flex;
+    align-items: flex-end;
   }
 `
 
@@ -135,11 +137,38 @@ export const meBubble = css`
   margin-left: auto;
 `
 
+export const error = css`
+  color: red;
+`
+
 export const meContent = (theme: Theme): SerializedStyles => css`
   background: ${theme.colors.primary};
   color: white;
   & span {
     color: #ccc;
+  }
+`
+
+export const observer = css`
+  width: 100%;
+`
+
+export const button = (theme: Theme): SerializedStyles => css`
+  background: ${theme.colors.primary};
+  transition: 0.5s;
+  margin-bottom: 5px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  &:hover {
+    cursor: pointer;
+    background: ${theme.colors['primary-600']};
+  }
+  &:active {
+    background: ${theme.colors['primary-700']};
   }
 `
 

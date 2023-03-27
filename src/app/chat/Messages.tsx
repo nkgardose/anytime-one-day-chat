@@ -1,29 +1,37 @@
 /** @jsxImportSource @emotion/react */
-import { useMemo } from 'react'
-import { useParams } from 'react-router-dom'
-import useStore from '../../hooks/useStore'
+import { useTheme } from '@emotion/react'
+import { MdNorth } from 'react-icons/md'
 import { type Message } from '../../reducers/Messages'
 import MessageBubble from './MessageBubble'
-import { messages as messagesStyle } from './style'
+import { messages as messagesStyle, observer, button } from './style'
 
-const Messages = (): JSX.Element => {
-  const { store } = useStore()
-  const { channel } = useParams()
+interface IMessages {
+  messages: Message[]
+  onFetchOld: () => any
+}
 
-  const messages: Message[] = useMemo(() => {
-    if (channel !== undefined && store.messages !== undefined)
-      return store.messages[channel] !== undefined ? store.messages[channel] : []
-    return []
-  }, [channel, store.messages])
-
+const Messages: React.FunctionComponent<IMessages> = ({ messages, onFetchOld }) => {
+  const theme = useTheme()
   return (
     <div css={messagesStyle}>
+      {messages.length >= 10 ? (
+        <div css={observer}>
+          <button css={button(theme)} onClick={onFetchOld}>
+            Read More
+            <span>
+              <MdNorth />
+            </span>
+          </button>
+        </div>
+      ) : null}
+
       {messages.map((message, i) => {
         const isLast = i + 1 === messages.length || messages[i + 1].userId !== message.userId
+
         return (
           <MessageBubble
             ref={(el) => {
-              if (el != null) {
+              if (el !== null) {
                 el.scrollIntoView()
               }
             }}
