@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
+import { useTheme } from '@emotion/react'
 import React, { forwardRef, useMemo } from 'react'
 import useStore from '../../hooks/useStore'
 import { type MessageStatus } from '../../reducers/Messages'
-import { avatarContainer, me, messageBubble, messageContent } from './style'
+import { avatarContainer, meBubble, meContent, messageBubble, messageContent } from './style'
 
 interface IMessageBubble {
   src: string | null
@@ -17,6 +18,7 @@ const MessageBubble: React.ForwardRefRenderFunction<HTMLDivElement, IMessageBubb
   ref
 ) => {
   const { store } = useStore()
+  const theme = useTheme()
 
   const isMe: boolean = useMemo(() => {
     return store.auth?.activeUser === name ?? false
@@ -27,7 +29,7 @@ const MessageBubble: React.ForwardRefRenderFunction<HTMLDivElement, IMessageBubb
   }
 
   return (
-    <div css={[messageBubble, isMe ? me : '']} ref={ref}>
+    <div css={[messageBubble, isMe ? meBubble : '']} ref={ref}>
       <div css={avatarContainer}>
         {src !== null ? (
           <>
@@ -36,7 +38,7 @@ const MessageBubble: React.ForwardRefRenderFunction<HTMLDivElement, IMessageBubb
           </>
         ) : null}
       </div>
-      <div css={messageContent}>
+      <div css={[messageContent, isMe ? meContent(theme) : '']}>
         <p>{text}</p>
         <span>{timestamp !== null ? `${convert(timestamp.getHours())}:${convert(timestamp.getMinutes())}` : null}</span>
       </div>

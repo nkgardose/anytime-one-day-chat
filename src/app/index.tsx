@@ -44,7 +44,7 @@ const App = (): JSX.Element => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<div>wala</div>} />
+        <Route index element={<></>} />
         <Route path="/chat/:channel" element={<ChatBox />} />
       </Route>
     </Routes>

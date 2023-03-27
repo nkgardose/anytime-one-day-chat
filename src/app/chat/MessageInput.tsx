@@ -24,7 +24,7 @@ const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessage
 
   const clear = (): void => {
     setValue('')
-    if (messageInput.current !== null && messageInput.current !== undefined) messageInput.current.innerText = ''
+    if (messageInput.current !== null && messageInput.current !== undefined) messageInput.current.textContent = ''
   }
 
   useImperativeHandle(
@@ -33,7 +33,8 @@ const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessage
       clear,
       setValue: (value) => {
         setValue(value)
-        if (messageInput.current !== null && messageInput.current !== undefined) messageInput.current.innerText = value
+        if (messageInput.current !== null && messageInput.current !== undefined)
+          messageInput.current.textContent = value
       }
     }),
     []
@@ -44,7 +45,7 @@ const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessage
   }, [value])
 
   const onInput = (e: FormEvent<HTMLDivElement>): void => {
-    if (e.currentTarget.innerText !== null) setValue(e.currentTarget.innerText)
+    if (e.currentTarget.textContent !== null) setValue(e.currentTarget.textContent)
   }
 
   const onSend = (): void => {
@@ -73,13 +74,7 @@ const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessage
             }
         }}
       />
-      <i
-        aria-hidden
-        onClick={() => {
-          onSend()
-        }}
-        css={send(theme)}
-      >
+      <i aria-label="send" role="button" tabIndex={0} onKeyDown={onSend} onClick={onSend} css={send(theme)}>
         <MdSend size={25} />
       </i>
     </div>

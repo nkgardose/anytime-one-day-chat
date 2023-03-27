@@ -130,9 +130,17 @@ export const avatarContainer = css`
   }
 `
 
-export const me = css`
+export const meBubble = css`
   flex-direction: row-reverse;
   margin-left: auto;
+`
+
+export const meContent = (theme: Theme): SerializedStyles => css`
+  background: ${theme.colors.primary};
+  color: white;
+  & span {
+    color: #ccc;
+  }
 `
 
 export default chat

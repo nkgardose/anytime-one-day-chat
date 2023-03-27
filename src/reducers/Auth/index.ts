@@ -6,8 +6,7 @@ export interface AuthState {
 }
 
 export enum AuthAction {
-  LOGIN = 'LOGIN',
-  ADD_USER = 'ADD_USER'
+  LOGIN = 'LOGIN'
 }
 
 interface SetUsernameAction {
