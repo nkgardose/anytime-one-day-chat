@@ -7,7 +7,6 @@ import { input, messageBox, send } from './style'
 interface IMessageInput {
   onChange: (value: string) => void
   sendMessage: () => void
-  loading?: boolean
 }
 
 export interface IMessageInputHandle {
@@ -16,7 +15,7 @@ export interface IMessageInputHandle {
 }
 
 const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessageInput> = (
-  { onChange, sendMessage, loading = false },
+  { onChange, sendMessage },
   ref
 ) => {
   const messageInput = useRef<HTMLDivElement>(null)
@@ -50,7 +49,7 @@ const MessageInput: React.ForwardRefRenderFunction<IMessageInputHandle, IMessage
   }
 
   const onSend = (): void => {
-    if (value.length > 0 && !loading) {
+    if (value.length > 0) {
       if (value.trim().length === 0) clear()
       else sendMessage()
     }

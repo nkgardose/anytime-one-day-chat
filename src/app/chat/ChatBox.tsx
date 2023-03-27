@@ -16,7 +16,7 @@ import { chatBox } from './style'
 const ChatBox = (): JSX.Element => {
   const { store, dispatch } = useStore()
   const { channel } = useParams()
-  const { data, loading } = useQuery(FETCH_LATEST_MESSAGE, {
+  const { data } = useQuery(FETCH_LATEST_MESSAGE, {
     variables: { channelId: channel ?? '' },
     fetchPolicy: 'network-only'
   })
@@ -158,7 +158,7 @@ const ChatBox = (): JSX.Element => {
     <div css={chatBox}>
       <Header>{channel} Channel</Header>
       <Messages messages={messages ?? []} onFetchOld={onFetchOld} />
-      <MessageInput ref={messageInput} loading={loading} onChange={onChange} sendMessage={onSend} />
+      <MessageInput ref={messageInput} onChange={onChange} sendMessage={onSend} />
     </div>
   )
 }

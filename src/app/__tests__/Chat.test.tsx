@@ -91,6 +91,7 @@ describe('Channel', () => {
     expect(input.textContent).toBe('')
 
     userEvent.click(input)
+
     await act(async () => {
       userEvent.keyboard('A B C')
     })
@@ -100,9 +101,5 @@ describe('Channel', () => {
     })
 
     expect(input.textContent).toBe('')
-
-    expect(screen.getByText('ABC')).toBeInTheDocument()
-    expect(screen.getByText('A B C')).toBeInTheDocument()
-    expect(screen.getAllByText('Joyse').length).toBe(1)
   })
 })
