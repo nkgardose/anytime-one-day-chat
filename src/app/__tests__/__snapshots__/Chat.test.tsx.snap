@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Channel renders properly 1`] = `
+<div>
+  <div
+    class="css-yu2ud0-ChatBox"
+  >
+    <nav
+      class="css-17wuva9-Header"
+    >
+       Channel
+    </nav>
+    <div
+      class="css-zp5xvb-Messages"
+    />
+    <div
+      class="css-1e2k6mq-MessageInput"
+    >
+      <div
+        class="css-xqsv07-MessageInput"
+        contenteditable="true"
+        placeholder="Type a message..."
+        role="textbox"
+        tabindex="0"
+      />
+      <i
+        aria-label="send"
+        class="css-186inh8-MessageInput"
+        role="button"
+        tabindex="0"
+      >
+        <svg
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+          />
+        </svg>
+      </i>
+    </div>
+  </div>
+</div>
+`;

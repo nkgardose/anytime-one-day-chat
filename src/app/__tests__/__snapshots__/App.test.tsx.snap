@@ -56,35 +56,40 @@ exports[`App renders properly 1`] = `
         class="css-1ti0mfk-ChannelList"
       >
         <li
-          aria-hidden="true"
-          class="css-1oyhoxx-ChannelItem"
+          class="css-1vhqlnv-ChannelItem"
         >
-          General
-           Channel
+          <a
+            href="/chat/General"
+          >
+            General
+             Channel
+          </a>
         </li>
         <li
-          aria-hidden="true"
-          class="css-1oyhoxx-ChannelItem"
+          class="css-1vhqlnv-ChannelItem"
         >
-          Technology
-           Channel
+          <a
+            href="/chat/Technology"
+          >
+            Technology
+             Channel
+          </a>
         </li>
         <li
-          aria-hidden="true"
-          class="css-1oyhoxx-ChannelItem"
+          class="css-1vhqlnv-ChannelItem"
         >
-          LGTM
-           Channel
+          <a
+            href="/chat/LGTM"
+          >
+            LGTM
+             Channel
+          </a>
         </li>
       </ul>
     </div>
     <div
       class="css-1cohcow-Layout"
-    >
-      <div>
-        wala
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
