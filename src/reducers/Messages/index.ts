@@ -15,7 +15,8 @@ export interface Message {
 export type MessagesState = Record<string, Message[]>
 
 export enum MessagesAction {
-  SEND_MESSAGE = 'SEND_MESSAGE'
+  SEND_MESSAGE = 'SEND_MESSAGE',
+  SET_MESSAGES = 'SET_MESSAGES'
 }
 
 interface SendMessageAction {
@@ -24,7 +25,13 @@ interface SendMessageAction {
   channel: string
 }
 
-export type MessagesActionType = SendMessageAction
+interface SetMessagesAction {
+  type: typeof MessagesAction.SET_MESSAGES
+  channel: string
+  messages: Message[]
+}
+
+export type MessagesActionType = SendMessageAction | SetMessagesAction
 
 export type IMessagesReducer = (store: MessagesState, action: MessagesActionType) => MessagesState
 
@@ -35,9 +42,22 @@ const MessagesReducer: IMessagesReducer = (store, action) => {
         ...(action.channel !== undefined && store[action.channel] !== undefined ? store[action.channel] : [])
       ]
       if (action.message !== undefined) messages.push(action.message)
+
       return {
         ...store,
-        [action.channel]: messages
+        [action.channel]: messages.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime())
+      }
+    }
+    case MessagesAction.SET_MESSAGES: {
+      const uniqueMessages = action.messages.reduce((unique: Message[], o: Message) => {
+        if (!unique.some((obj) => obj.messageId === o.messageId)) {
+          unique.push(o)
+        }
+        return unique
+      }, [])
+      return {
+        ...store,
+        [action.channel]: uniqueMessages.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime())
       }
     }
     default:
